@@ -1,11 +1,11 @@
 # eesti_sõnastik
-
+lihtsalt chmod +x eesti_sõnastik <br>
 see on väga lihtne bash script, et luua .txt fail, milles on [eesti sõnastik](http://www.meso.ee/~jjpp/speller/). <br>
 sul on vaja: <br>
 - [wget](https://en.wikipedia.org/wiki/Wget) 
 - [iconv](https://en.wikipedia.org/wiki/Iconv) 
 - [g++](https://gcc.gnu.org/)
-- [sed](https://en.wikipedia.org/wiki/Sed) 
+- [sed](https://en.wikipedia.org/wiki/Sed) <br>
 kui sul on unix süsteem siis sul peaks juba paljud need programmid olemas olema.
 - **wget-i** kasutame, et allalaadida .dic ja .aff failid.
 - **iconv-i** kasutame, et viia ISO-8859-1 encoding üle UTF-8 encodinguks.
