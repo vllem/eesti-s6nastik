@@ -6,7 +6,7 @@ sul on vaja: <br>
 - [iconv](https://en.wikipedia.org/wiki/Iconv) 
 - [g++](https://gcc.gnu.org/)
 - [sed](https://en.wikipedia.org/wiki/Sed) 
-kui sul on unix süsteem siis sul peaks juba paljud need programmid olemas olema. <br>
+kui sul on unix süsteem siis sul peaks juba paljud need programmid olemas olema.
 - **wget-i** kasutame, et allalaadida .dic ja .aff failid.
 - **iconv-i** kasutame, et viia ISO-8859-1 encoding üle UTF-8 encodinguks.
 - **g++** kasutame, et kompileerida [unmunch](https://github.com/hunspell/hunspell/tree/master/src/tools) programm.
