@@ -1,4 +1,4 @@
-# eesti_sõnastik
+# eesti-sõnastik
 see on väga lihtne bash script, et luua .txt fail, milles on [eesti sõnastik](http://www.meso.ee/~jjpp/speller/). <br>
 laadige alla ja chmod +x eesti_sõnastik <br>
 sul on vaja: <br>
