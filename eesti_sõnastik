@@ -29,7 +29,7 @@ tee_s6nastik() {
   rm unmunch
 }
 
-vaheta_lollid_t2hed() {
+asenda_lollid_t2hed() {
   sed -i -e 's/þ/ž/g' et_EE_sõnastik.txt
   sed -i -e 's/ð/š/g' et_EE_sõnastik.txt 
   # uncommenti alumine kui olete macil
@@ -41,4 +41,4 @@ lae_alla_s6nastik
 ISO_8859_2_UTF-8
 lae_alla_unmunch
 tee_s6nastik
-vaheta_lollid_t2hed
+asenda_lollid_t2hed
