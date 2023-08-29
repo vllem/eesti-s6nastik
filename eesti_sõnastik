@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+lae_alla_s6nastik() {
+  wget -O ISO-8859.aff "http://www.meso.ee/~jjpp/speller/et_EE.aff" &
+  wget -O ISO-8859.dic "http://www.meso.ee/~jjpp/speller/et_EE.dic" &
+  wait
+}
+
+ISO_8859_2_UTF-8() {
+  iconv -f ISO-8859-1 -t UTF-8 ISO-8859.aff > UTF-8.aff &
+  iconv -f ISO-8859-1 -t UTF-8 ISO-8859.dic > UTF-8.dic & 
+  wait
+  rm ISO-8859.aff && rm ISO-8859.dic
+}
+
+lae_alla_unmunch() {
+  wget -O unmunch.cxx "https://raw.githubusercontent.com/hunspell/hunspell/master/src/tools/unmunch.cxx" &
+  wget -O unmunch.h "https://raw.githubusercontent.com/hunspell/hunspell/master/src/tools/unmunch.h" &
+  wait
+  g++ -o unmunch unmunch.cxx
+  rm unmunch.cxx && rm unmunch.h
+}
+
+tee_s6nastik() {
+  ./unmunch UTF-8.dic UTF-8.aff 2> /dev/null > et_EE_sõnastik.txt.bk sort et_EE_sõnastik.txt.bk > et_EE_sõnastik.txt
+  rm et_EE_sõnastik.txt.bk
+  rm UTF-8.aff
+  rm UTF-8.dic
+  rm unmunch
+}
+
+vaheta_lollid_t2hed() {
+  sed -i -e 's/þ/ž/g' et_EE_sõnastik.txt
+  sed -i -e 's/ð/š/g' et_EE_sõnastik.txt 
+  # uncommenti alumine kui olete macil
+  # sed -i '' 's/þ/ž/g' et_EE_sõnastik.txt
+  # sed -i '' 's/ð/š/g' et_EE_sõnastik.txt
+}
+
+lae_alla_s6nastik
+ISO_8859_2_UTF-8
+lae_alla_unmunch
+tee_s6nastik
+vaheta_lollid_t2hed
